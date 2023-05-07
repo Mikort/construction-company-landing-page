@@ -1,0 +1,46 @@
+.IconButton {
+  display: inline-flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  padding: 3px;
+  box-sizing: border-box;
+
+  border-style: solid;
+  border-width: 2px;
+  border-color: #0000;
+
+  background-color: #0000;
+
+  font-family: 'Montserrat', serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  text-decoration: none;
+
+  color: var(--secondary-1000);
+}
+
+.IconButton:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--primary-300);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 8px;
+
+  color: var(--primary-300);
+}
+
+.IconButton:focus {
+  border-color: var(--primary-500);
+}
+
+.IconButton:active {
+  text-decoration: underline;
+  text-decoration-color: var(--primary-500);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 8px;
+
+  color: var(--primary-500);
+}
