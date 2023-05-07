@@ -1,0 +1,29 @@
+.Input {
+  background-color: var(--secondary-800);
+  color: var(--secondary-0);
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  line-height: 32px;
+  border: none;
+  border-radius: 16px;
+  padding: 14px 24px;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.Input:hover {
+  background-color: var(--secondary-600);
+}
+
+.Input:focus {
+  background-color: var(--secondary-600);
+}
+
+.Input:active {
+  background-color: var(--secondary-600);
+}
+
+.Input::placeholder {
+  color: var(--secondary-200);
+}
