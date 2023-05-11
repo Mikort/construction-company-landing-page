@@ -1,4 +1,4 @@
-import { BaseProps } from "../../BaseProps.interface";
+import { BaseProps } from "src/BaseProps.interface";
 import { memo, MouseEventHandler, ReactNode } from "react";
 import styleClasses from "./IconButton.module.css";
 import block from "bem-css-modules";

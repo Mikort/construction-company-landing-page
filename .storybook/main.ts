@@ -1,6 +1,7 @@
 import type { StorybookConfig } from "@storybook/react-webpack5";
 import { Configuration } from "mini-css-extract-plugin";
 import { RuleSetRule } from "webpack";
+import TsconfigPathsPlugin from "tsconfig-paths-webpack-plugin";
 
 // noinspection SpellCheckingInspection
 const config: StorybookConfig = {
@@ -39,6 +40,10 @@ const config: StorybookConfig = {
         },
       },
     ];
+
+    config.resolve?.plugins?.push(
+      new TsconfigPathsPlugin({ extensions: ["js", "mjs", "jsx", "ts", "tsx"] })
+    );
 
     return config;
   },

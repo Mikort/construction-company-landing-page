@@ -1,6 +1,6 @@
 import { Link } from "./Link";
-import { ReactComponent as OKSvg } from "../../icons/ok.svg";
-import { ReactComponent as VKSvg } from "../../icons/vk.svg";
+import { ReactComponent as OKSvg } from "icons/ok.svg";
+import { ReactComponent as VKSvg } from "icons/vk.svg";
 
 export default {
   title: "Link",

@@ -114,6 +114,7 @@
     "babel-plugin-named-exports-order": "^0.0.2",
     "prop-types": "^15.8.1",
     "storybook": "^7.0.5",
+    "tsconfig-paths-webpack-plugin": "^4.0.1",
     "webpack": "^5.79.0"
   },
   "jest": {
@@ -151,7 +152,10 @@
     ],
     "modulePaths": [],
     "moduleNameMapper": {
-      "^react-native$": "react-native-web"
+      "^react-native$": "react-native-web",
+      "^utils/(.*)$": "<rootDir>/src/utils/$1",
+      "^icons/(.*)$": "<rootDir>/src/icons/$1",
+      "^src/(.*)$": "<rootDir>/src/$1"
     },
     "moduleFileExtensions": [
       "web.js",

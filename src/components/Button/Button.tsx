@@ -1,7 +1,7 @@
 import { memo, MouseEventHandler, ReactNode } from "react";
 import styleClasses from "./Button.module.css";
 import block from "bem-css-modules";
-import { BaseProps } from "../../BaseProps.interface";
+import { BaseProps } from "src/BaseProps.interface";
 
 const classes = block(styleClasses);
 

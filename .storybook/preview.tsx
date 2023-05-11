@@ -1,6 +1,6 @@
-import type {Preview} from "@storybook/react";
+import type { Preview } from "@storybook/react";
 import "../src/color-schema.module.css";
-import {BrowserRouter} from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 
 const preview: Preview = {
   parameters: {

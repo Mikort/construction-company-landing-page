@@ -1,7 +1,7 @@
 import styleClasses from "./Input.module.css";
 import block from "bem-css-modules";
 import { ChangeEventHandler, memo, useMemo } from "react";
-import { BaseProps } from "../../BaseProps.interface";
+import { BaseProps } from "src/BaseProps.interface";
 
 const classes = block(styleClasses);
 

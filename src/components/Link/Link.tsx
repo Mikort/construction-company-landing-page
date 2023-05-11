@@ -1,4 +1,4 @@
-import { BaseProps } from "../../BaseProps.interface";
+import { BaseProps } from "src/BaseProps.interface";
 import { memo, ReactNode } from "react";
 import { Link as RouterLink } from "react-router-dom";
 import styleClasses from "./Link.module.css";
