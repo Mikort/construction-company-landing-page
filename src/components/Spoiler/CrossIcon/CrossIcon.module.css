@@ -1,0 +1,15 @@
+.CrossIcon__background_color_primary {
+  color: var(--primary-500);
+}
+
+.CrossIcon__background_color_secondary {
+  color: var(--secondary-200);
+}
+
+.CrossIcon__cross_color_primary {
+  color: var(--secondary-0);
+}
+
+.CrossIcon__cross_color_secondary {
+  color: var(--secondary-1000);
+}
