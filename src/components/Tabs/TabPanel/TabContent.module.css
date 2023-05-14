@@ -1,0 +1,16 @@
+.TabContent {
+  display: block;
+
+  font-family: 'Montserrat', serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 32px;
+
+  padding: 0;
+  margin: 0;
+}
+
+.TabContent_hidden {
+  display: none;
+}
