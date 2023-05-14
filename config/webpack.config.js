@@ -337,9 +337,7 @@ module.exports = function (webpackEnv) {
           babelRuntimeRegenerator,
         ]),
         // To support tsconfig paths property
-        new TsconfigPathsPlugin({
-          extensions: ["js", "mjs", "jsx", "ts", "tsx"],
-        }),
+        new TsconfigPathsPlugin(),
       ],
     },
     module: {

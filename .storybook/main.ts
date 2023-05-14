@@ -41,9 +41,14 @@ const config: StorybookConfig = {
       },
     ];
 
-    config.resolve?.plugins?.push(
-      new TsconfigPathsPlugin({ extensions: ["js", "mjs", "jsx", "ts", "tsx"] })
-    );
+    if (config.resolve == null) {
+      config.resolve = {};
+    }
+    if (config.resolve.plugins == null) {
+      config.resolve.plugins = [];
+    }
+
+    config.resolve.plugins.push(new TsconfigPathsPlugin());
 
     return config;
   },
