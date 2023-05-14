@@ -80,3 +80,13 @@
   line-height: 29px;
   padding: 22px 34px;
 }
+
+@media (max-width: 550px) {
+  .Button {
+    border-radius: 8px;
+  }
+
+  .Button_size_medium, .Button_size_small {
+    padding: 11px 31px;
+  }
+}
