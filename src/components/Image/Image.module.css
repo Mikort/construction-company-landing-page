@@ -1,0 +1,21 @@
+.Image {
+  position: relative;
+  object-fit: cover;
+  filter: none;
+}
+
+.Image_isBorderRadiusEnabled {
+  border-radius: 32px;
+}
+
+@media (max-width: 768px) {
+  .Image_isBorderRadiusEnabled {
+    border-radius: 24px;
+  }
+}
+
+@media (max-width: 550px) {
+  .Image_isBorderRadiusEnabled {
+    border-radius: 16px;
+  }
+}
