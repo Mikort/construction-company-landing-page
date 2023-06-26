@@ -12,10 +12,10 @@ export type TextStyleProps = Omit<
 >;
 
 export function useTextStyleClasses({
-  fontWeight,
-  lineHeight,
-  fontSize,
-  color,
+  fontWeight = "400",
+  lineHeight = "32px",
+  fontSize = "16px",
+  color = "secondary-1000",
 }: TextStyleProps) {
   return useMemo(
     () => classes({ fontWeight, lineHeight, fontSize, color }),
