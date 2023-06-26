@@ -1,8 +1,9 @@
 import { BaseProps } from "src/BaseProps.interface";
-import { memo, ReactNode } from "react";
-import { Link as RouterLink } from "react-router-dom";
+import React, { memo, ReactNode, useMemo } from "react";
+import { HashLink as RouterLink } from "react-router-hash-link";
 import styleClasses from "./Link.module.css";
 import block from "bem-css-modules";
+import { mixClasses } from "utils/mixClasses";
 
 const classes = block(styleClasses);
 
@@ -32,20 +33,31 @@ export interface LinkProps extends BaseProps {
 /**
  * Ссылка. При нажатии переводит на путь, указанный в href
  */
-export const Link = memo<LinkProps>(function ({
-  withUnderline = true,
-  color,
-  href,
-  children,
-  testId,
-}) {
-  return (
-    <RouterLink
-      className={classes({ withUnderline, color })}
-      to={href}
-      data-testid={testId}
-    >
-      {children}
-    </RouterLink>
-  );
-});
+export const Link: React.FunctionComponent<LinkProps> = memo<LinkProps>(
+  function ({
+    withUnderline = true,
+    color,
+    href,
+    children,
+    id,
+    testId = "Link",
+    className,
+  }) {
+    const generatedClasses = useMemo(
+      () => classes({ withUnderline, color }),
+      [withUnderline, color]
+    );
+
+    return (
+      <RouterLink
+        id={id}
+        className={mixClasses(generatedClasses, className)}
+        to={href}
+        data-testid={testId}
+        smooth
+      >
+        {children}
+      </RouterLink>
+    );
+  }
+);
