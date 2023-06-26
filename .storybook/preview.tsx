@@ -22,11 +22,19 @@ const preview: Preview = {
           crossOrigin={""}
         />
         <link
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap"
+          rel="stylesheet"
+        />
+        <link
           href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap"
           rel="stylesheet"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap"
           rel="stylesheet"
         />
         <Story />

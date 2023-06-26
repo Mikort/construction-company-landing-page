@@ -154,9 +154,12 @@
     "modulePaths": [],
     "moduleNameMapper": {
       "^react-native$": "react-native-web",
-      "^utils/(.*)$": "<rootDir>/src/utils/$1",
+      "^src/(.*)$": "<rootDir>/src/$1",
+      "^components/(.*)$": "<rootDir>/src/components/$1",
       "^icons/(.*)$": "<rootDir>/src/icons/$1",
-      "^src/(.*)$": "<rootDir>/src/$1"
+      "^utils/(.*)$": "<rootDir>/src/utils/$1",
+      "^images/(.*)$": "<rootDir>/src/images/$1",
+      "^hooks/(.*)$": "<rootDir>/src/hooks/$1"
     },
     "moduleFileExtensions": [
       "web.js",

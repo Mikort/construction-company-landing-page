@@ -1,6 +1,6 @@
 :root {
-  --primary-500: #ff9900;
   --primary-300: #FFB84D;
+  --primary-500: #ff9900;
   --primary-700: #E1670E;
 
   --secondary-0: #FFFFFF;
@@ -10,5 +10,5 @@
   --secondary-800: #414141;
   --secondary-1000: #000000;
 
-  --accent-1: #97EE3F;
+  --accent-200: #97EE3F;
 }

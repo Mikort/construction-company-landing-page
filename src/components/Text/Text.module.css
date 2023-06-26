@@ -1,0 +1,164 @@
+.Text {
+  font-family: 'Montserrat', serif;
+  font-style: normal;
+  padding: 0;
+  margin: 0;
+
+  white-space: pre-line;
+}
+
+/**** font-weight ****/
+
+.Text_fontWeight_400 {
+  font-weight: 400;
+}
+
+.Text_fontWeight_600 {
+  font-weight: 600;
+}
+
+.Text_fontWeight_700 {
+  font-weight: 700;
+}
+
+.Text_fontWeight_800 {
+  font-weight: 800;
+}
+
+/**** line-height ****/
+
+.Text_lineHeight_16px {
+  line-height: 16px;
+}
+
+.Text_lineHeight_20px {
+  line-height: 20px;
+}
+
+.Text_lineHeight_24px {
+  line-height: 24px;
+}
+
+.Text_lineHeight_28px {
+  line-height: 28px;
+}
+
+.Text_lineHeight_30px {
+  line-height: 30px;
+}
+
+.Text_lineHeight_32px {
+  line-height: 32px;
+}
+
+.Text_lineHeight_50px {
+  line-height: 50px;
+}
+
+.Text_lineHeight_60px {
+  line-height: 60px;
+}
+
+.Text_lineHeight_75px {
+  line-height: 75px;
+}
+
+.Text_lineHeight_85px {
+  line-height: 85px;
+}
+
+/**** font-size ****/
+
+.Text_fontSize_12px {
+  font-size: 12px;
+}
+
+.Text_fontSize_14px {
+  font-size: 14px;
+}
+
+.Text_fontSize_14px {
+  font-size: 14px;
+}
+
+.Text_fontSize_16px {
+  font-size: 16px;
+}
+
+.Text_fontSize_18px {
+  font-size: 18px;
+}
+
+.Text_fontSize_20px {
+  font-size: 20px;
+}
+
+.Text_fontSize_22px {
+  font-size: 22px;
+}
+
+.Text_fontSize_24px {
+  font-size: 24px;
+}
+
+.Text_fontSize_48px {
+  font-size: 48px;
+}
+
+.Text_fontSize_50px {
+  font-size: 50px;
+}
+
+.Text_fontSize_60px {
+  font-size: 60px;
+}
+
+.Text_fontSize_70px {
+  font-size: 70px;
+}
+
+/**** color ****/
+
+.Text_color_primary-300 {
+  color: var(--primary-300);
+}
+
+.Text_color_primary-500 {
+  color: var(--primary-500);
+}
+
+.Text_color_primary-700 {
+  color: var(--primary-700);
+}
+
+.Text_color_secondary-0 {
+  color: var(--secondary-0);
+}
+
+.Text_color_secondary-200 {
+  color: var(--secondary-200);
+}
+
+.Text_color_secondary-500 {
+  color: var(--secondary-500);
+}
+
+.Text_color_secondary-600 {
+  color: var(--secondary-600);
+}
+
+.Text_color_secondary-800 {
+  color: var(--secondary-800);
+}
+
+.Text_color_secondary-1000 {
+  color: var(--secondary-1000);
+}
+
+.Text_color_accent-200 {
+  color: var(--accent-200);
+}
+
+.Text:has(> *) {
+  color: inherit;
+}

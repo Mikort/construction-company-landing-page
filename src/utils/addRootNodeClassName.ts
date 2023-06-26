@@ -1,7 +1,7 @@
 import React from "react";
 
 export function addRootNodeClassName(
-  element: React.ReactElement<{ className: string }>,
+  element: React.ReactElement<{ className?: string }>,
   className: string | undefined
 ) {
   if (className === undefined) {
@@ -9,6 +9,6 @@ export function addRootNodeClassName(
   }
 
   return React.cloneElement(element, {
-    className: [element.props.className, className].join(" "),
+    className: [element.props?.className, className].join(" "),
   });
 }
