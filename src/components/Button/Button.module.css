@@ -4,47 +4,38 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+
   box-sizing: border-box;
+
   border-radius: 16px;
-  font-family: 'Montserrat', sans-serif;
-  text-align: center;
-  font-style: normal;
   border-style: solid;
-  gap: 10px;
 }
 
 .Button_color_primary {
   border-width: 3px;
-  font-weight: 700;
-  color: var(--secondary-0);
   background-color: var(--primary-500);
   border-color: var(--primary-500);
 }
 
 .Button_color_primary:hover {
-  color: var(--secondary-0);
   background-color: var(--primary-300);
   border-color: var(--primary-300);
 }
 
 .Button_color_primary:focus {
-  color: var(--secondary-0);
   background-color: var(--primary-300);
   border-color: var(--primary-300);
 }
 
 .Button_color_primary:active {
-  color: var(--secondary-0);
   background-color: var(--primary-700);
   border-color: var(--primary-700);
 }
 
 .Button_color_secondary {
   padding: 19px 37px;
-  font-weight: 400;
   border: 1px solid var(--secondary-1000);
-  color: var(--secondary-1000);
-  background-color: var(--secondary-0);
+  background-color: var(--secondary-600);
 }
 
 .Button_color_secondary:hover {
@@ -54,30 +45,36 @@
 }
 
 .Button_color_secondary:focus {
-  color: var(--secondary-0);
   background-color: var(--secondary-600);
   border-color: var(--secondary-600);
 }
 
-.Button_color_secondary:active {
+.Button_color_secondary:focus {
   color: var(--secondary-0);
+}
+
+.Button_color_secondary:active {
   background-color: var(--secondary-1000);
   border-color: var(--secondary-1000);
 }
 
-.Button_transparent {
+.Button_isTransparent {
   background-color: #0000;
 }
 
-.Button_size_small {
-  font-size: 16px;
-  line-height: 20px;
-  padding: 19px 37px;
+.Button_color_primary.Button_size_small {
+  padding: 16px 35px;
 }
 
-.Button_size_medium {
-  font-size: 23.5px;
-  line-height: 29px;
+.Button_color_secondary.Button_size_small {
+  padding: 18px 37px;
+}
+
+.Button_color_primary.Button_size_medium {
+  padding: 20px 32px;
+}
+
+.Button_color_secondary.Button_size_medium {
   padding: 22px 34px;
 }
 

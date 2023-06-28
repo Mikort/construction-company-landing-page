@@ -1,7 +1,9 @@
-import { memo, MouseEventHandler, ReactNode } from "react";
+import React, { memo, MouseEventHandler, useMemo } from "react";
 import styleClasses from "./Button.module.css";
 import block from "bem-css-modules";
 import { BaseProps } from "src/BaseProps.interface";
+import { mixClasses } from "utils/mixClasses";
+import { useTextStyleClasses } from "components/Text/useTextStyleClasses";
 
 const classes = block(styleClasses);
 
@@ -15,7 +17,7 @@ export interface ButtonProps extends BaseProps {
    * Переключение прозрачности background
    * @default false
    */
-  transparent?: boolean;
+  isTransparent?: boolean;
 
   /**
    * Размеры кнопки
@@ -25,7 +27,7 @@ export interface ButtonProps extends BaseProps {
   /**
    * Контент кнопки
    */
-  children: ReactNode;
+  children: string;
 
   /**
    * Обработчик события нажатия на кнопку
@@ -42,23 +44,43 @@ export interface ButtonProps extends BaseProps {
 /**
  * Кнопка с обработчиком нажатия на нее
  */
-export const Button = memo<ButtonProps>(function ({
-  children,
-  color,
-  transparent = false,
-  size,
-  onClick,
-  testId,
-  disabled = false,
-}) {
-  return (
-    <button
-      className={classes({ color, transparent, size })}
-      onClick={onClick}
-      data-testid={testId}
-      disabled={disabled}
-    >
-      {children}
-    </button>
-  );
-});
+export const Button: React.FunctionComponent<ButtonProps> = memo<ButtonProps>(
+  function ({
+    children,
+    color,
+    isTransparent = false,
+    size,
+    onClick,
+    disabled = false,
+    id,
+    testId = "Button",
+    className,
+  }) {
+    const generatedClasses = useMemo(
+      () => classes({ color, isTransparent: isTransparent, size }),
+      [color, isTransparent, size]
+    );
+
+    const textClasses = useTextStyleClasses({
+      color:
+        isTransparent && color === "secondary"
+          ? "secondary-1000"
+          : "secondary-0",
+      fontWeight: size === "medium" || color === "primary" ? "700" : "400",
+      fontSize: size === "medium" ? "24px" : "16px",
+      lineHeight: size === "medium" ? "30px" : "20px",
+    });
+
+    return (
+      <button
+        id={id}
+        className={mixClasses(generatedClasses, textClasses, className)}
+        onClick={onClick}
+        data-testid={testId}
+        disabled={disabled}
+      >
+        {children}
+      </button>
+    );
+  }
+);

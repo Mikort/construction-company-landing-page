@@ -10,7 +10,7 @@ export default {
       return (
         <div
           style={{
-            backgroundColor: context.args.transparent ? "#CACACA" : undefined,
+            backgroundColor: context.args.isTransparent ? "#CACACA" : undefined,
             display: "inline-block",
             padding: "20px",
           }}
@@ -26,7 +26,7 @@ export const PrimaryMedium: StoryObj = {
   args: {
     color: "primary",
     children: "Заказать расчёт",
-    transparent: false,
+    isTransparent: false,
     size: "medium",
   },
 };
@@ -35,7 +35,7 @@ export const SecondarySmallTransparent: StoryObj = {
   args: {
     color: "secondary",
     children: "Договор",
-    transparent: true,
+    isTransparent: true,
     size: "small",
   },
 };
@@ -44,7 +44,7 @@ export const PrimarySmallTransparent: StoryObj = {
   args: {
     color: "primary",
     children: "Подробнее",
-    transparent: true,
+    isTransparent: true,
     size: "small",
   },
 };
