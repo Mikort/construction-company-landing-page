@@ -1,0 +1,12 @@
+.Logo {
+  width: 224px;
+  height: 72px;
+}
+
+.Logo_color_secondary-1000 {
+  color: var(--secondary-1000);
+}
+
+.Logo_color_secondary-0 {
+  color: var(--secondary-0);
+}
