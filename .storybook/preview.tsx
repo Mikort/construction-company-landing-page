@@ -43,4 +43,10 @@ const preview: Preview = {
   ],
 };
 
+document.body.onload = function () {
+  const modalRoot = document.createElement("div");
+  modalRoot.id = "modal-root";
+  document.body.appendChild(modalRoot);
+};
+
 export default preview;
