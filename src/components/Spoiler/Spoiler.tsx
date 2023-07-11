@@ -1,8 +1,10 @@
-import { memo, ReactNode, useCallback, useState } from "react";
+import React, { memo, ReactNode, useCallback, useState } from "react";
 import styleClasses from "./Spoiler.module.css";
 import block from "bem-css-modules";
 import { CrossIcon, CrossIconColor } from "./CrossIcon/CrossIcon";
 import { BaseProps } from "src/BaseProps.interface";
+import { Text } from "components/Text/Text";
+import { mixClasses } from "utils/mixClasses";
 
 const classes = block(styleClasses);
 
@@ -27,33 +29,41 @@ export interface SpoilerProps extends BaseProps {
 /**
  * Компонент для отображения/сокрытия контента по клику на заголовок
  */
-export const Spoiler = memo<SpoilerProps>(function ({
-  label,
-  children,
-  isOpen = false,
-  testId = "Spoiler",
-}) {
-  const [color, setColor] = useState<CrossIconColor>("secondary");
+export const Spoiler: React.FunctionComponent<SpoilerProps> =
+  memo<SpoilerProps>(function ({
+    label,
+    children,
+    isOpen = false,
+    id,
+    testId = "Spoiler",
+    className,
+  }) {
+    const [color, setColor] = useState<CrossIconColor>("secondary");
 
-  const onMouseEnter = useCallback(() => setColor("primary"), [setColor]);
-  const onMouseLeave = useCallback(() => setColor("secondary"), [setColor]);
+    const onMouseEnter = useCallback(() => setColor("primary"), [setColor]);
+    const onMouseLeave = useCallback(() => setColor("secondary"), [setColor]);
 
-  return (
-    <details className={classes()} open={isOpen} data-testid={testId}>
-      <summary
-        className={classes("summary")}
-        onMouseEnter={onMouseEnter}
-        onMouseLeave={onMouseLeave}
-        data-testid={`${testId}.summary`}
+    return (
+      <details
+        id={id}
+        className={mixClasses(classes(), className)}
+        open={isOpen}
+        data-testid={testId}
       >
-        <p className={classes("label")} data-testid={`${testId}.label`}>
-          {label}
-        </p>
-        <CrossIcon color={color} data-testid={`${testId}.icon`} />
-      </summary>
-      <div className={classes("content")} data-testid={`${testId}.content`}>
-        {children}
-      </div>
-    </details>
-  );
-});
+        <summary
+          className={classes("summary")}
+          onMouseEnter={onMouseEnter}
+          onMouseLeave={onMouseLeave}
+          data-testid={`${testId}.summary`}
+        >
+          <Text className={classes("label")} data-testid={`${testId}.label`}>
+            {label}
+          </Text>
+          <CrossIcon color={color} data-testid={`${testId}.icon`} />
+        </summary>
+        <div className={classes("content")} data-testid={`${testId}.content`}>
+          {children}
+        </div>
+      </details>
+    );
+  });
