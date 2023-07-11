@@ -1,6 +1,6 @@
 import { act, render, screen } from "@testing-library/react";
 import { Tabs } from "./Tabs";
-import { TabContent } from "./TabPanel/TabContent";
+import { TabContent } from "./TabsPanel/TabContent/TabContent";
 import { TabsList } from "./TabsList/TabsList";
 import { TabButton } from "./TabsList/TabButton/TabButton";
 import userEvent from "@testing-library/user-event";
@@ -21,7 +21,7 @@ describe("Tabs", () => {
     const tabsElement = await screen.findByTestId("Tabs");
     expect(tabsElement).toBeInTheDocument();
 
-    const tabPanelElement = await screen.findByTestId("TabPanel");
+    const tabPanelElement = await screen.findByTestId("TabContent");
     expect(tabPanelElement).toBeInTheDocument();
 
     const tabsListElement = await screen.findByTestId("TabsList");

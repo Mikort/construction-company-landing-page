@@ -1,5 +1,5 @@
 import { BaseProps } from "src/BaseProps.interface";
-import { memo, ReactNode } from "react";
+import React, { memo, ReactNode } from "react";
 import { TabsContextProvider } from "./Tabs.context";
 
 const ariaRole = "tabs";
@@ -19,16 +19,14 @@ export interface TabsProps extends BaseProps {
 /**
  * Контейнер для вкладок
  */
-export const Tabs = memo<TabsProps>(function ({
-  children,
-  startTab,
-  testId = "Tabs",
-}) {
-  return (
-    <TabsContextProvider startTab={startTab}>
-      <div data-testid={testId} role={ariaRole}>
-        {children}
-      </div>
-    </TabsContextProvider>
-  );
-});
+export const Tabs: React.FunctionComponent<TabsProps> = memo<TabsProps>(
+  function ({ children, startTab, id, testId = "Tabs", className }) {
+    return (
+      <TabsContextProvider startTab={startTab}>
+        <div id={id} data-testid={testId} className={className} role={ariaRole}>
+          {children}
+        </div>
+      </TabsContextProvider>
+    );
+  }
+);

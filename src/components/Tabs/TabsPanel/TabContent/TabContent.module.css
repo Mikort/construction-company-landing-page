@@ -9,8 +9,11 @@
 
   padding: 0;
   margin: 0;
+
+  margin-right: -100%;
+  width: 100%;
 }
 
 .TabContent_hidden {
-  display: none;
+  visibility: hidden;
 }
