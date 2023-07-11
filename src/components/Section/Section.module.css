@@ -1,0 +1,15 @@
+.Section {
+}
+
+.Section__header {
+  margin-bottom: 20px;
+}
+
+.Section__description {
+  max-width: 1235px;
+  margin-bottom: 20px;
+}
+
+.Section > *:not(.Section__description, .Section__header) {
+  margin-top: 50px;
+}
