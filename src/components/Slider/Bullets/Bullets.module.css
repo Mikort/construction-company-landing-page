@@ -1,0 +1,27 @@
+.Bullets {
+  position: absolute;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+
+  column-gap: 20px;
+  row-gap: 10px;
+
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 5px;
+  margin: 0;
+
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 550px) {
+  .Bullets {
+    bottom: 15px;
+  }
+}
