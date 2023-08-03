@@ -27,3 +27,11 @@
 .Input::placeholder {
   color: var(--secondary-200);
 }
+
+.Input_width_fit-parent {
+  width: 100%;
+}
+
+.Input_width_auto {
+  width: auto;
+}

@@ -1,7 +1,8 @@
 import styleClasses from "./Input.module.css";
 import block from "bem-css-modules";
-import { ChangeEventHandler, memo, useMemo } from "react";
+import React, { ChangeEventHandler, memo, useMemo } from "react";
 import { BaseProps } from "src/BaseProps.interface";
+import { mixClasses } from "utils/mixClasses";
 
 const classes = block(styleClasses);
 
@@ -55,37 +56,51 @@ export interface InputProps extends BaseProps {
    * @default false
    */
   disabled?: boolean;
+
+  /**
+   * Ширина поля для ввода
+   * @default "fit-parent"
+   */
+  width?: "fit-parent" | "auto";
 }
 
 /**
  * Текстовое поле ввода
  */
-export const Input = memo<InputProps>(function ({
-  value,
-  placeholder,
-  onChange,
-  required = false,
-  testId,
-  inputMode = "text",
-  type = "text",
-  disabled = false,
-}) {
-  const newPlaceholder = useMemo(
-    () => `${placeholder ?? ""}${required ? "*" : ""}`,
-    [placeholder, required]
-  );
+export const Input: React.FunctionComponent<InputProps> = memo<InputProps>(
+  function ({
+    value,
+    placeholder,
+    onChange,
+    required = false,
+    inputMode = "text",
+    type = "text",
+    disabled = false,
+    width = "fit-parent",
+    id,
+    testId = "Input",
+    className,
+  }) {
+    const newPlaceholder = useMemo(
+      () => (placeholder ?? "") + (required ? "*" : ""),
+      [placeholder, required]
+    );
 
-  return (
-    <input
-      type={type}
-      inputMode={inputMode}
-      className={classes()}
-      onChange={onChange}
-      value={value}
-      placeholder={newPlaceholder}
-      required={required}
-      data-testid={testId}
-      disabled={disabled}
-    />
-  );
-});
+    const generatedClasses = useMemo(() => classes({ width }), [width]);
+
+    return (
+      <input
+        id={id}
+        type={type}
+        inputMode={inputMode}
+        className={mixClasses(generatedClasses, className)}
+        onChange={onChange}
+        value={value}
+        placeholder={newPlaceholder}
+        required={required}
+        data-testid={testId}
+        disabled={disabled}
+      />
+    );
+  }
+);
