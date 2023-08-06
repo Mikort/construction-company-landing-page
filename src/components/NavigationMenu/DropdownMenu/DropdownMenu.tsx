@@ -55,6 +55,7 @@ export const DropdownMenu: React.FunctionComponent<DropdownMenuProps> =
           transitionDurationMs={400}
           isWithBackground
           testId={`${testId}.Popup`}
+          className={classes("container")}
         >
           <div
             id={id}

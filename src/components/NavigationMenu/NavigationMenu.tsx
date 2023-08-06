@@ -1,12 +1,8 @@
 import React, { memo, ReactNode, useMemo } from "react";
-import styleClasses from "./NavigationMenu.module.css";
-import block from "bem-css-modules";
 import { BaseProps } from "src/BaseProps.interface";
 import { Stack } from "components/Stack/Stack";
 import { useResize } from "hooks/useResize";
 import { DropdownMenu } from "components/NavigationMenu/DropdownMenu/DropdownMenu";
-
-const classes = block(styleClasses);
 
 export interface NavigationMenuProps extends BaseProps {
   /**
@@ -59,10 +55,7 @@ export const NavigationMenu: React.FunctionComponent<NavigationMenuProps> =
     return (
       <nav id={id} className={className} data-testid={testId}>
         {type === "dropdown" ? (
-          <DropdownMenu
-            className={classes("dropdownMenu")}
-            testId={`${testId}.DropdownMenu`}
-          >
+          <DropdownMenu testId={`${testId}.DropdownMenu`}>
             {itemsStack}
           </DropdownMenu>
         ) : (

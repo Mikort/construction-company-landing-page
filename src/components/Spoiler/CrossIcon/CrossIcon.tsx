@@ -2,7 +2,6 @@ import React, { memo } from "react";
 import styleClasses from "./CrossIcon.module.css";
 import block from "bem-css-modules";
 import { BaseProps } from "src/BaseProps.interface";
-import { mixClasses } from "utils/mixClasses";
 
 const classes = block(styleClasses);
 
@@ -28,7 +27,7 @@ export const CrossIcon: React.FunctionComponent<CrossIconProps> =
     return (
       <svg
         id={id}
-        className={mixClasses(classes(), className)}
+        className={className}
         width="50"
         height="50"
         viewBox="0 0 50 50"

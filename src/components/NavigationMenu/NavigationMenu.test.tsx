@@ -23,14 +23,14 @@ describe("NavigationMenu", () => {
       render(<NavigationMenu type="dropdown">Test</NavigationMenu>);
 
       const openButton = await screen.findByTestId(
-        "NavigationMenu.DropdownMenu.OpenButton"
+        "FooterNavigationMenu.DropdownMenu.OpenButton"
       );
       expect(openButton).toBeInTheDocument();
 
       fireEvent.click(openButton);
 
       const dropdownMenu = await screen.findByTestId(
-        "NavigationMenu.DropdownMenu"
+        "FooterNavigationMenu.DropdownMenu"
       );
       expect(dropdownMenu).toBeInTheDocument();
     });
@@ -39,19 +39,19 @@ describe("NavigationMenu", () => {
       render(<NavigationMenu type="dropdown">Test</NavigationMenu>);
 
       const openButton = await screen.findByTestId(
-        "NavigationMenu.DropdownMenu.OpenButton"
+        "FooterNavigationMenu.DropdownMenu.OpenButton"
       );
       expect(openButton).toBeInTheDocument();
 
       fireEvent.click(openButton);
 
       const dropdownMenu = await screen.findByTestId(
-        "NavigationMenu.DropdownMenu"
+        "FooterNavigationMenu.DropdownMenu"
       );
       expect(dropdownMenu).toBeInTheDocument();
 
       const closeButton = await screen.findByTestId(
-        "NavigationMenu.DropdownMenu.CloseButton"
+        "FooterNavigationMenu.DropdownMenu.CloseButton"
       );
       expect(closeButton).toBeInTheDocument();
 

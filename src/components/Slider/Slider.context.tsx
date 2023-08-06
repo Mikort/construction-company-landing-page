@@ -5,6 +5,7 @@ import React, {
   SetStateAction,
   useCallback,
   useContext,
+  useMemo,
   useState,
 } from "react";
 import { BaseContextProviderProps } from "src/BaseContextProviderProps.interface";
@@ -78,19 +79,18 @@ export const SliderContextProvider = memo<SliderContextProviderProps>(
       [setCurrentSlide, slidesCount]
     );
 
-    // TODO useMemo для value
+    const value = useMemo(() => {
+      return {
+        currentSlide,
+        slidesCount,
+        setCurrentSlide,
+        moveToNext,
+        moveToPrevious,
+      };
+    }, []);
+
     return (
-      <SliderContext.Provider
-        value={{
-          currentSlide,
-          slidesCount,
-          setCurrentSlide,
-          moveToNext,
-          moveToPrevious,
-        }}
-      >
-        {children}
-      </SliderContext.Provider>
+      <SliderContext.Provider value={value}>{children}</SliderContext.Provider>
     );
   }
 );

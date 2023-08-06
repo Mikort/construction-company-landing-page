@@ -133,7 +133,7 @@ export const Popup: React.FunctionComponent<PopupProps> = memo<PopupProps>(
         <div
           id={id}
           ref={popupRef}
-          className={mixClasses(generatedClasses, className)}
+          className={generatedClasses}
           style={{
             transition: backgroundTransition,
           }}
@@ -141,7 +141,7 @@ export const Popup: React.FunctionComponent<PopupProps> = memo<PopupProps>(
           onClick={onBackgroundClick}
         >
           <div
-            className={positionClassNames}
+            className={mixClasses(positionClassNames, className)}
             style={{
               transition: contentTransition,
             }}
