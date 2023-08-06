@@ -9,6 +9,13 @@
 
   border-radius: 16px;
   border-style: solid;
+
+  cursor: pointer;
+  caret-color: transparent;
+
+  text-align: center;
+
+  max-width: 100%;
 }
 
 .Button_color_primary {

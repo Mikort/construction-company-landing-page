@@ -1,4 +1,9 @@
-import React, { memo, MouseEventHandler, useMemo } from "react";
+import React, {
+  FormEventHandler,
+  memo,
+  MouseEventHandler,
+  useMemo,
+} from "react";
 import styleClasses from "./Button.module.css";
 import block from "bem-css-modules";
 import { BaseProps } from "src/BaseProps.interface";
@@ -7,7 +12,9 @@ import { useTextStyleClasses } from "components/Text/useTextStyleClasses";
 
 const classes = block(styleClasses);
 
-export interface ButtonProps extends BaseProps {
+export type ButtonProps = ButtonRawProps | InputProps;
+
+interface ButtonRawProps extends BaseProps {
   /**
    * Цветовая схема кнопки
    */
@@ -39,6 +46,52 @@ export interface ButtonProps extends BaseProps {
    * @default false
    */
   disabled?: boolean;
+
+  /**
+   * Является ли кнопка submit input для формы
+   * @default false
+   */
+  isSubmit?: false;
+}
+
+interface InputProps extends BaseProps {
+  /**
+   * Цветовая схема кнопки
+   */
+  color: "primary" | "secondary";
+
+  /**
+   * Переключение прозрачности background
+   * @default false
+   */
+  isTransparent?: boolean;
+
+  /**
+   * Размеры кнопки
+   */
+  size: "small" | "medium";
+
+  /**
+   * Контент кнопки
+   */
+  children: string;
+
+  /**
+   * Обработчик события нажатия на кнопку
+   */
+  onClick: FormEventHandler<HTMLInputElement>;
+
+  /**
+   * Отключение кнопки
+   * @default false
+   */
+  disabled?: boolean;
+
+  /**
+   * Является ли кнопка submit input для формы
+   * @default false
+   */
+  isSubmit?: true;
 }
 
 /**
@@ -52,6 +105,7 @@ export const Button: React.FunctionComponent<ButtonProps> = memo<ButtonProps>(
     size,
     onClick,
     disabled = false,
+    isSubmit = false,
     id,
     testId = "Button",
     className,
@@ -71,11 +125,19 @@ export const Button: React.FunctionComponent<ButtonProps> = memo<ButtonProps>(
       lineHeight: size === "medium" ? "30px" : "20px",
     });
 
-    return (
+    return isSubmit ? (
+      <input
+        id={id}
+        className={mixClasses(generatedClasses, textClasses, className)}
+        onSubmit={onClick as FormEventHandler<HTMLInputElement>}
+        data-testid={testId}
+        value={children}
+      />
+    ) : (
       <button
         id={id}
         className={mixClasses(generatedClasses, textClasses, className)}
-        onClick={onClick}
+        onClick={onClick as MouseEventHandler<HTMLButtonElement>}
         data-testid={testId}
         disabled={disabled}
       >
