@@ -1,0 +1,11 @@
+.DropdownMenu {
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.DropdownMenu__closeButton {
+  margin-bottom: 30px;
+}

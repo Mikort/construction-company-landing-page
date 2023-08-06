@@ -15,7 +15,8 @@ import { usePreventPageScroll } from "hooks/usePreventPageScroll";
 
 const classes = block(styleClasses);
 
-const modalRoot = document.getElementById("modal-root") as HTMLElement;
+const modalRoot =
+  (document.getElementById("modal-root") as HTMLElement) ?? document.body;
 const cssTransitionClasses = {
   enter: classes({ transition: "enter" }),
   enterActive: classes({ transition: "enter-active" }),
