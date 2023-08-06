@@ -11,7 +11,7 @@ import { BaseProps } from "src/BaseProps.interface";
 import { mixClasses } from "utils/mixClasses";
 import { CSSTransition } from "react-transition-group";
 import ReactDOM from "react-dom";
-import { usePreventScroll } from "hooks/usePreventScroll";
+import { usePreventPageScroll } from "hooks/usePreventPageScroll";
 
 const classes = block(styleClasses);
 
@@ -111,7 +111,7 @@ export const Popup: React.FunctionComponent<PopupProps> = memo<PopupProps>(
 
     const popupRef = useRef(null);
 
-    const setScrollDisabled = usePreventScroll(document.body, false);
+    const setScrollDisabled = usePreventPageScroll(false);
 
     const generatedClasses = useMemo(
       () => classes({ animationType, isWithBackground }),

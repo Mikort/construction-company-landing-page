@@ -25,7 +25,7 @@ export interface IconButtonProps extends BaseProps {
 }
 
 /**
- * Кнопка наавигационного меню
+ * Кнопка навигационного меню
  */
 export const IconButton: React.FunctionComponent<IconButtonProps> =
   memo<IconButtonProps>(function ({
