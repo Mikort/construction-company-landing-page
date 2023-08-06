@@ -1,0 +1,7 @@
+.Divider {
+  border-color: var(--secondary-800);
+
+  margin: auto;
+  width: 100%;
+  height: 100%;
+}
