@@ -34,7 +34,7 @@ export const ImageCard: React.FunctionComponent<ImageCardProps> =
     const size = useResize();
 
     const style = useMemo(() => {
-      return { "background-image": `url(${imageSrc})` } as CSSProperties;
+      return { backgroundImage: `url(${imageSrc})` } as CSSProperties;
     }, [imageSrc]);
 
     // TODO добавить скриншотный тест
